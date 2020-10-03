@@ -17,7 +17,7 @@ import urllib3
 #import db
 import urllib.parse
 from recommendation import recommendation
-import fastapiconfig
+#import fastapiconfig
 from fastapi.responses import JSONResponse
 import uvicorn
 from fastapi.encoders import jsonable_encoder
@@ -50,6 +50,7 @@ if environ.get('ENV') and os.environ['ENV'] == 'production':
 
 else:
     try:
+        import fastapiconfig
         apiKey = fastapiconfig.settings.API_KEY
         app.secret_key = fastapiconfig.settings.SECRET_KEY
         tmdb.api_key = fastapiconfig.settings.TMDB_API_KEY
