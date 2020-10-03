@@ -18,9 +18,9 @@ import urllib3
 import urllib.parse
 from recommendation import recommendation
 #import fastapiconfig
-from fastapi.responses import JSONResponse
+#from fastapi.responses import JSONResponse
 import uvicorn
-from fastapi.encoders import jsonable_encoder
+#from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
 from telegramapi import telegramapi
 
@@ -79,7 +79,7 @@ getrecommendations = recommendation(tmdb.api_key)
 @app.get("/searchMovie/{movie}")
 async def searchMovies(movie, requestID: int = None):
     print("Processing...", id, requestID)
-    return JSONResponse(searchmovie_obj.searchMovies(movie, requestID))
+    return searchmovie_obj.searchMovies(movie, requestID)
 
 
 @cross_origin
@@ -142,13 +142,13 @@ def getFullDetails(id):
 def getOTTDetails(movie, external_id: str = None):
     getOtt_obj = getOttDetails(apiKey, external_id, movie)
     res = getOtt_obj.getOTT()
-    return JSONResponse(res)
+    return res
 
 
 @cross_origin
 @app.get('/getrecommendations/{id}')
 def getmovierecommendations(id):
-    return JSONResponse(getrecommendations.getRecommendation(id))
+    return getrecommendations.getRecommendation(id)
 
 
 @cross_origin
