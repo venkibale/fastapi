@@ -3,7 +3,7 @@ from fastapi import FastAPI, Header
 from starlette.requests import Request
 from pyrogram import Client
 import time
-from flask_pymongo import PyMongo
+#from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS, cross_origin
 from tmdbv3api import TMDb, Movie, Discover, TV, Person, Collection, Company, Configuration, Genre, Season, List, Certification
