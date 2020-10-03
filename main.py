@@ -148,3 +148,9 @@ def getOTTDetails(movie, external_id: str = None):
 @app.get('/getrecommendations/{id}')
 def getmovierecommendations(id):
     return JSONResponse(getrecommendations.getRecommendation(id))
+
+
+@cross_origin
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
