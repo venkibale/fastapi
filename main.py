@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Header
-from fastapi.middleware.cors import CORSMiddleware
+#from fastapi.middleware.cors import CORSMiddleware
 from starlette.requests import Request
 from pyrogram import Client
 import time
@@ -25,14 +25,14 @@ from pydantic import BaseModel
 from telegramapi import telegramapi
 
 app = FastAPI()
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=[
+#         "*"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"]
+# )
 
 
 tmdb = TMDb()
