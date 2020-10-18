@@ -30,5 +30,4 @@ class recommendation:
                 if external_id:
                     temp['external_id'] = external_id['imdb_id']
                 result.append(temp)
-        print(result)
         return result
